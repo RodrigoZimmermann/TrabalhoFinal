@@ -1,0 +1,13 @@
+h1 {
+  color: green;
+}
+.error {
+  color: red;
+}
+#form-alunos {
+  border: 1px solid #aaa;
+  padding: 10px;
+}
+label {
+  display: block;
+}

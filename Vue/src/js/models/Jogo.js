@@ -8,3 +8,5 @@ class Jogo {
         this.quantidade = quantidade;
     }
 }
+
+export default Jogo;

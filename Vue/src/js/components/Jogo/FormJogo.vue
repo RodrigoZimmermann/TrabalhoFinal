@@ -33,7 +33,7 @@
 
 <script>
 
-//import Jogo from '../../models/Jogo';
+import Jogo from '../../models/Jogo';
 export default {
   data() {
     return {
@@ -67,12 +67,12 @@ export default {
       }
       const jogo = new Jogo(this.id, this.titulo, this.tipo, this.preco, this.plataforma, this.quantidade);
       this.$parent.salvar(jogo);
-      this.id = 0;
-      this.titulo = "";
-      this.tipo = "",
-      this.preco = "",
-      this.plataforma = "",
-      this.quantidade = "";
+      this.id = '';
+      this.titulo = '';
+      this.tipo = '',
+      this.preco = '',
+      this.plataforma = '',
+      this.quantidade = '';
     },
     carregar(jogo) {
       this.id = aluno.id;

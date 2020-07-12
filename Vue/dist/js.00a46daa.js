@@ -8542,6 +8542,29 @@ if (inBrowser) {
 
 var _default = Vue;
 exports.default = _default;
+},{}],"js/models/Jogo.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Jogo = function Jogo(id, titulo, tipo, preco, plataforma, quantidade) {
+  _classCallCheck(this, Jogo);
+
+  this.id = id;
+  this.titulo = titulo;
+  this.tipo = tipo;
+  this.preco = preco;
+  this.plataforma = plataforma;
+  this.quantidade = quantidade;
+};
+
+var _default = Jogo;
+exports.default = _default;
 },{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
@@ -8891,6 +8914,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _Jogo = _interopRequireDefault(require("../../models/Jogo"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -8924,7 +8952,6 @@ exports.default = void 0;
 //
 //
 //
-//import Jogo from '../../models/Jogo';
 var _default = {
   data: function data() {
     return {
@@ -8958,11 +8985,11 @@ var _default = {
         return;
       }
 
-      var jogo = new Jogo(this.id, this.titulo, this.tipo, this.preco, this.plataforma, this.quantidade);
+      var jogo = new _Jogo.default(this.id, this.titulo, this.tipo, this.preco, this.plataforma, this.quantidade);
       this.$parent.salvar(jogo);
-      this.id = 0;
-      this.titulo = "";
-      this.tipo = "", this.preco = "", this.plataforma = "", this.quantidade = "";
+      this.id = '';
+      this.titulo = '';
+      this.tipo = '', this.preco = '', this.plataforma = '', this.quantidade = '';
     },
     carregar: function carregar(jogo) {
       this.id = aluno.id;
@@ -9173,7 +9200,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"js/components/Jogo/ListaJogos.vue":[function(require,module,exports) {
+},{"../../models/Jogo":"js/models/Jogo.js","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"js/components/Jogo/ListaJogos.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9186,7 +9213,56 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  computed: {
+    possuiJogos: function possuiJogos() {
+      return this.jogos && this.jogos.length > 0;
+    }
+  },
+  methods: {
+    editar: function editar(jogo) {
+      this.$parent.carregar(jogo);
+    },
+    excluir: function excluir(id) {
+      if (confirm("Deseja realmente excluir o jogo?")) {
+        this.$parent.excluir(id);
+      }
+    }
+  },
+  props: {
+    jogos: Array
+  }
+};
 exports.default = _default;
         var $58a2c4 = exports.default || module.exports;
       
@@ -9200,14 +9276,96 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h2", [_vm._v("Lista de Jogos")]),
+    _vm._v(" "),
+    _c("table", [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "tbody",
+        [
+          !_vm.possuiJogos
+            ? _c("tr", [
+                _c("td", { attrs: { colspan: "4" } }, [
+                  _vm._v("Nenhum registro encontrado")
+                ])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.jogos, function(jogo) {
+            return _c("tr", { key: jogo.id }, [
+              _c("td", [_vm._v(_vm._s(jogo.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(jogo.titulo))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(jogo.tipo))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(jogo.preco))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(jogo.plataforma))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(jogo.quantidade))]),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.editar(jogo)
+                      }
+                    }
+                  },
+                  [_vm._v("editar")]
+                ),
+                _vm._v(" |\n          "),
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.excluir(jogo.id)
+                      }
+                    }
+                  },
+                  [_vm._v("excluir")]
+                )
+              ])
+            ])
+          })
+        ],
+        2
+      )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Lista de Jogos")])])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Título")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Tipo")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Preço")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Plataforma")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Quantidade")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Ações")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -9216,7 +9374,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-58a2c4",
             functional: undefined
           };
         })());
@@ -9254,16 +9412,58 @@ var _FormJogo = _interopRequireDefault(require("./FormJogo"));
 
 var _ListaJogos = _interopRequireDefault(require("./ListaJogos"));
 
+var _Jogo = _interopRequireDefault(require("../../models/Jogo"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var _default = {
+  data: function data() {
+    return {
+      proxId: 4,
+      jogos: [new _Jogo.default(1, "Counter Strike - Global Offencive", "FPS", 24, 50, "PC", 10), new _Jogo.default(2, "Grand Theft Auto V", "Simulador", 60, 00, "PC/PS4/PS3", 5), new _Jogo.default(3, "Red dead redemption 2", "Simulador", 210, 00, "PC/PS4", 3)]
+    };
+  },
+  methods: {
+    carregar: function carregar(jogo) {
+      this.$refs.FormJogos.carregar(jogo);
+    },
+    salvar: function salvar(jogo) {
+      if (jogo.id) {
+        var index = this.jogos.findIndex(function (x) {
+          return x.id == jogo.id;
+        });
+
+        var jogos = _toConsumableArray(this.jogos); //cria copia do jogo
+
+
+        jogos[index] = jogo; //edita o jogo pelo indice
+
+        this.jogos = jogos; //atualiza o construtor do jogo
+      } else {
+        jogo.id = this.proxId;
+        this.proxId++;
+        this.jogo.push(jogo);
+      }
+    },
+    excluir: function excluir(id) {
+      var index = this.jogo.findIndex(function (x) {
+        return x.id == id;
+      });
+      this.jogo.splice(index, 1);
+    }
+  },
   components: {
     FormJogo: _FormJogo.default,
     ListaJogos: _ListaJogos.default
@@ -9282,7 +9482,15 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("FormJogo"), _vm._v(" "), _c("ListaJogos")], 1)
+  return _c(
+    "div",
+    [
+      _c("FormJogo", { ref: "FormJogos" }),
+      _vm._v(" "),
+      _c("ListaJogos", { attrs: { jogos: _vm.jogos } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -9317,7 +9525,7 @@ render._withStripped = true
       
       }
     })();
-},{"./FormJogo":"js/components/Jogo/FormJogo.vue","./ListaJogos":"js/components/Jogo/ListaJogos.vue","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"js/App.vue":[function(require,module,exports) {
+},{"./FormJogo":"js/components/Jogo/FormJogo.vue","./ListaJogos":"js/components/Jogo/ListaJogos.vue","../../models/Jogo":"js/models/Jogo.js","_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"../node_modules/vue-hot-reload-api/dist/index.js","vue":"../node_modules/vue/dist/vue.runtime.esm.js"}],"js/App.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9410,6 +9618,15 @@ var _App = _interopRequireDefault(require("./App.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/*
+import express from 'express';
+import cors from 'cors';
+
+app.use(cors());
+app.use(express.json());
+
+app.use(require('./routes'));
+*/
 new _vue.default({
   render: function render(createElement) {
     return createElement(_App.default);
@@ -9443,7 +9660,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52596" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55288" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

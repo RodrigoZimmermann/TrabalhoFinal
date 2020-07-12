@@ -15,9 +15,9 @@ export default {
         return{
             proxId: 4,
             jogos: [
-                new Jogo (1, "Counter Strike - Global Offencive", "FPS", 24,50 , "PC", 10),
-                new Jogo (2, "Grand Theft Auto V", "Simulador", 60,00, "PC/PS4/PS3", 5),
-                new Jogo (3, "Red dead redemption 2", "Simulador", 210,00 , "PC/PS4", 3),
+                new Jogo (1, 'Counter Strike Global Offencive', 'FPS', 24.50 , 'PC', 10),
+                new Jogo (2, 'Grand Theft Auto V', 'Simulador', 60.00, 'PS3', 5),
+                new Jogo (3, 'Red dead redemption 2', 'Simulador', 210.00 , 'PS4', 3),
             ]
         }
     },

@@ -9432,7 +9432,7 @@ var _default = {
   data: function data() {
     return {
       proxId: 4,
-      jogos: [new _Jogo.default(1, "Counter Strike - Global Offencive", "FPS", 24, 50, "PC", 10), new _Jogo.default(2, "Grand Theft Auto V", "Simulador", 60, 00, "PC/PS4/PS3", 5), new _Jogo.default(3, "Red dead redemption 2", "Simulador", 210, 00, "PC/PS4", 3)]
+      jogos: [new _Jogo.default(1, 'Counter Strike Global Offencive', 'FPS', 24.50, 'PC', 10), new _Jogo.default(2, 'Grand Theft Auto V', 'Simulador', 60.00, 'PS3', 5), new _Jogo.default(3, 'Red dead redemption 2', 'Simulador', 210.00, 'PS4', 3)]
     };
   },
   methods: {
@@ -9618,15 +9618,6 @@ var _App = _interopRequireDefault(require("./App.vue"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/*
-import express from 'express';
-import cors from 'cors';
-
-app.use(cors());
-app.use(express.json());
-
-app.use(require('./routes'));
-*/
 new _vue.default({
   render: function render(createElement) {
     return createElement(_App.default);
@@ -9660,7 +9651,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55288" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55362" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

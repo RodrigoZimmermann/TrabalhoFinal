@@ -1,6 +1,5 @@
 <template>
   <div>
-      <h1>Formulário de Jogos</h1>
     <form id="form-jogo" v-on:submit.prevent="onSubmit">
         <h2>Cadastrar um Jogo</h2>
     <p>
@@ -13,7 +12,7 @@
     </p>
     <p>
       <label for="preco">Preço:</label>
-      <input name="preco" v-model="preco" type="number" />
+      <input name="preco" v-model="preco" type="text" />
     </p>
     <p>
       <label for="plataforma">Plataforma:</label>
@@ -75,7 +74,7 @@ export default {
       this.quantidade = '';
     },
     carregar(jogo) {
-      //this.id = aluno.id;      ANALISAR ESTE CARA
+      this.id = jogo.id;
       this.titulo = jogo.titulo;
       this.tipo = jogo.tipo,
       this.preco = jogo.preco,

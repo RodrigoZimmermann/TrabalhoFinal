@@ -8951,7 +8951,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
 var _default = {
   data: function data() {
     return {
@@ -8992,7 +8991,7 @@ var _default = {
       this.tipo = '', this.preco = '', this.plataforma = '', this.quantidade = '';
     },
     carregar: function carregar(jogo) {
-      //this.id = aluno.id;      ANALISAR ESTE CARA
+      this.id = jogo.id;
       this.titulo = jogo.titulo;
       this.tipo = jogo.tipo, this.preco = jogo.preco, this.plataforma = jogo.plataforma, this.quantidade = jogo.quantidade;
     }
@@ -9012,8 +9011,6 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", [_vm._v("Formulário de Jogos")]),
-    _vm._v(" "),
     _c(
       "form",
       {
@@ -9090,7 +9087,7 @@ exports.default = _default;
                 expression: "preco"
               }
             ],
-            attrs: { name: "preco", type: "number" },
+            attrs: { name: "preco", type: "text" },
             domProps: { value: _vm.preco },
             on: {
               input: function($event) {
@@ -9651,7 +9648,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55362" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56041" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

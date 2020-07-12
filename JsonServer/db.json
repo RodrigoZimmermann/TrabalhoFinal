@@ -1,0 +1,47 @@
+{
+    "jogos": [
+        {
+            "id": 1,
+            "titulo": "Counter Strike - Global Offencive",
+            "tipo": "FPS",
+            "preco": 24.50,
+            "plataforma_id": 1,
+            "quantidade": 10
+
+        },
+        {
+            "id": 2,
+            "nome": "Grand Theft Auto V",
+            "tipo": "Simulador",
+            "preco": 60.00,
+            "plataforma_id": 2,
+            "quantidade": 5
+        },
+        {
+            "id": 3,
+            "nome": "Red dead redemption 2",
+            "tipo": "Simulador",
+            "preco": 210.00,
+            "plataforma_id": 2,
+            "quantidade": 3
+        },
+        {
+            "id": 4,
+            "nome": "Assassin's Creed Odyssey",
+            "tipo": "Simulador",
+            "preco": 85.00,
+            "plataforma_id": 1,
+            "quantidade": 7
+        }
+    ],
+    "plataforma": [
+        {
+            "id":1,
+            "nome": "PC"
+        },
+        {
+            "id": 2,
+            "nome": "Console"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 <template>
   <div>
-      <FormJogo ref="FormJogos"></FormJogo>
+      <FormJogo ref="FormJogo"></FormJogo>
       <ListaJogos v-bind:jogos="jogos"></ListaJogos>
     </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     },
     methods: {
     carregar(jogo) {
-      this.$refs.FormJogos.carregar(jogo);
+      this.$refs.FormJogo.carregar(jogo);
     },
     salvar(jogo) {
       if (jogo.id) {
@@ -35,12 +35,12 @@ export default {
       else {
         jogo.id = this.proxId;
         this.proxId++;
-        this.jogo.push(jogo);
+        this.jogos.push(jogo);
       }
     },
     excluir(id) {
-      const index = this.jogo.findIndex(x => x.id==id);
-      this.jogo.splice(index, 1);
+      const index = this.jogos.findIndex(x => x.id==id);
+      this.jogos.splice(index, 1);
     }
   },
     components: {

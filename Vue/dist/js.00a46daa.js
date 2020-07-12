@@ -8992,7 +8992,6 @@ var _default = {
       this.tipo = '', this.preco = '', this.plataforma = '', this.quantidade = '';
     },
     carregar: function carregar(jogo) {
-      this.id = aluno.id;
       this.titulo = jogo.titulo;
       this.tipo = jogo.tipo, this.preco = jogo.preco, this.plataforma = jogo.plataforma, this.quantidade = jogo.quantidade;
     }
@@ -9437,7 +9436,7 @@ var _default = {
   },
   methods: {
     carregar: function carregar(jogo) {
-      this.$refs.FormJogos.carregar(jogo);
+      this.$refs.FormJogo.carregar(jogo);
     },
     salvar: function salvar(jogo) {
       if (jogo.id) {
@@ -9454,14 +9453,14 @@ var _default = {
       } else {
         jogo.id = this.proxId;
         this.proxId++;
-        this.jogo.push(jogo);
+        this.jogos.push(jogo);
       }
     },
     excluir: function excluir(id) {
-      var index = this.jogo.findIndex(function (x) {
+      var index = this.jogos.findIndex(function (x) {
         return x.id == id;
       });
-      this.jogo.splice(index, 1);
+      this.jogos.splice(index, 1);
     }
   },
   components: {
@@ -9485,7 +9484,7 @@ exports.default = _default;
   return _c(
     "div",
     [
-      _c("FormJogo", { ref: "FormJogos" }),
+      _c("FormJogo", { ref: "FormJogo" }),
       _vm._v(" "),
       _c("ListaJogos", { attrs: { jogos: _vm.jogos } })
     ],

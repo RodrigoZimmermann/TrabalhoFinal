@@ -8992,6 +8992,7 @@ var _default = {
       this.tipo = '', this.preco = '', this.plataforma = '', this.quantidade = '';
     },
     carregar: function carregar(jogo) {
+      //this.id = aluno.id;      ANALISAR ESTE CARA
       this.titulo = jogo.titulo;
       this.tipo = jogo.tipo, this.preco = jogo.preco, this.plataforma = jogo.plataforma, this.quantidade = jogo.quantidade;
     }

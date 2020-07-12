@@ -75,6 +75,7 @@ export default {
       this.quantidade = '';
     },
     carregar(jogo) {
+      //this.id = aluno.id;      ANALISAR ESTE CARA
       this.titulo = jogo.titulo;
       this.tipo = jogo.tipo,
       this.preco = jogo.preco,

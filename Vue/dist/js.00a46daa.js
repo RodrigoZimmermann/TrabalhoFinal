@@ -10344,7 +10344,7 @@ var _default = {
   },
   apagar: function apagar(jogo) {
     return _config.http.delete('jogos', {
-      data: jogo
+      data: jogo.id
     });
   }
 };
@@ -10715,21 +10715,42 @@ var _default = {
     Salvar: function Salvar() {
       var _this2 = this;
 
-      if (!this.jogo.id) {
-        _jogos.default.salvar(this.jogo).then(function (res) {
-          alert('Salvo com sucesso!');
-          _this2.jogo = [];
-
-          _this2.listar();
-        });
+      if (!this.jogo.nome) {
+        alert('Faltou Inserir o Nome!');
+      } else if (!this.jogo.tipo) {
+        alert('Faltou Inserir o Tipo!');
+      } else if (!this.jogo.preco) {
+        alert('Faltou Inserir o Preço!');
+      } else if (!this.jogo.quantidade) {
+        alert('Faltou Inserir a Quantidade!');
       } else {
-        _jogos.default.atualizar(this.jogo).then(function (res) {
-          alert('Atualizado com sucesso!');
+        if (!this.jogo.id) {
+          _jogos.default.salvar(this.jogo).then(function (res) {
+            alert('Salvo com sucesso!');
+            _this2.jogo = {
+              id: '',
+              nome: '',
+              tipo: '',
+              preco: '',
+              quantidade: ''
+            };
 
-          _this2.listar();
+            _this2.listar();
+          });
+        } else {
+          _jogos.default.atualizar(this.jogo).then(function (res) {
+            alert('Atualizado com sucesso!');
+            _this2.jogo = {
+              id: '',
+              nome: '',
+              tipo: '',
+              preco: '',
+              quantidade: ''
+            };
 
-          _this2.jogo = [];
-        });
+            _this2.listar();
+          });
+        }
       }
     },
     editar: function editar(jogo) {
@@ -10745,14 +10766,14 @@ var _default = {
   }
 };
 exports.default = _default;
-        var $6778e3 = exports.default || module.exports;
+        var $a30e2c = exports.default || module.exports;
       
-      if (typeof $6778e3 === 'function') {
-        $6778e3 = $6778e3.options;
+      if (typeof $a30e2c === 'function') {
+        $a30e2c = $a30e2c.options;
       }
     
         /* template */
-        Object.assign($6778e3, (function () {
+        Object.assign($a30e2c, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -10988,9 +11009,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$6778e3', $6778e3);
+            api.createRecord('$a30e2c', $a30e2c);
           } else {
-            api.reload('$6778e3', $6778e3);
+            api.reload('$a30e2c', $a30e2c);
           }
         }
 
@@ -11039,7 +11060,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54939" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64174" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

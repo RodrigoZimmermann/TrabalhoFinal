@@ -78,18 +78,41 @@ export default {
     })
     },
     Salvar(){
-      if(!this.jogo.id){
-        Jogos.salvar(this.jogo).then(res =>{
-          alert('Salvo com sucesso!')
-          this.jogo = []
-          this.listar();
-        })
+
+      if(!this.jogo.nome){
+        alert('Faltou Inserir o Nome!')
+        }else if(!this.jogo.tipo){
+        alert('Faltou Inserir o Tipo!')
+        }else if(!this.jogo.preco){
+        alert('Faltou Inserir o Preço!')
+        }else if(!this.jogo.quantidade){
+        alert('Faltou Inserir a Quantidade!')
       }else{
-      Jogos.atualizar(this.jogo).then(res =>{
-        alert('Atualizado com sucesso!')
-          this.listar();
-          this.jogo = []
-        })
+            if(!this.jogo.id  ){
+              Jogos.salvar(this.jogo).then(res =>{
+                alert('Salvo com sucesso!')
+                this.jogo = {
+                         id:'',
+                         nome:'',
+                         tipo:'',
+                         preco:'',
+                         quantidade:''
+                }
+                this.listar();
+              })
+            }else{
+            Jogos.atualizar(this.jogo).then(res =>{
+              alert('Atualizado com sucesso!')
+                this.jogo = {
+                      id:'',
+                      nome:'',
+                      tipo:'',
+                      preco:'',
+                      quantidade:''
+                }
+                this.listar();
+              })
+      }
       }
     },
     editar(jogo){
@@ -101,7 +124,5 @@ export default {
       })
     }
   }
-
 }
-
 </script>

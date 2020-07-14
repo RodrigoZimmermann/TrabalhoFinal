@@ -1,3 +1,43 @@
 {
-  "jogos": []
+  "jogos": [
+    {
+      "id": 1,
+      "nome": "The Last of US 2",
+      "tipo": "PS4",
+      "preco": "200,00",
+      "quantidade": "10"
+    },
+    {
+      "id": 2,
+      "nome": "teste",
+      "tipo": "teste",
+      "preco": "teste",
+      "quantidade": "22",
+      "jogoId": "db.json"
+    },
+    {
+      "id": 3,
+      "nome": "wacac",
+      "tipo": "",
+      "preco": "",
+      "quantidade": "",
+      "jogoId": "db.json"
+    },
+    {
+      "id": 4,
+      "nome": "efa",
+      "tipo": "faf",
+      "preco": "234",
+      "quantidade": "324",
+      "jogoId": "db.json"
+    },
+    {
+      "id": 5,
+      "nome": "ss",
+      "tipo": "wdwe",
+      "preco": "32423",
+      "quantidade": "23423",
+      "jogoId": "db.json"
+    }
+  ]
 }

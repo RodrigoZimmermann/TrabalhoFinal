@@ -8,9 +8,9 @@ export default {
         return http.post('jogos', jogo)
     },
     atualizar: (jogo) => {
-        return http.put('jogos', jogo)
+        return http.put('jogos/' + jogo.id, jogo)
     },
     apagar: (jogo) => {
-        return http.delete('jogos', { data: jogo.id })
+        return http.delete('jogos/' + jogo.id)
     }
 }

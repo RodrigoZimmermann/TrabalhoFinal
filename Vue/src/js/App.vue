@@ -1,4 +1,3 @@
-
 <template>
   <div id="app">
     <nav>
@@ -26,6 +25,7 @@
             <th>Tipo</th>
             <th>Valor</th>
             <th>Quantidade</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -51,10 +51,8 @@
   </div>
 </template>
 <script>
-
 import Jogos from './jogos'
 export default {
-
   data(){
     return{
       jogo: {
@@ -67,7 +65,6 @@ export default {
       loadJogos:[]
     }
   },
-
   mounted(){
     this.listar();
   },
@@ -78,7 +75,6 @@ export default {
     })
     },
     Salvar(){
-
       if(!this.jogo.nome){
         alert('Faltou Inserir o Nome!')
         }else if(!this.jogo.tipo){

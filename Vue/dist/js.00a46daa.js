@@ -10318,7 +10318,7 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var http = _axios.default.create({
-  baseURL: 'http://localhost:3000/jogos/db.json'
+  baseURL: 'http://localhost:3000/'
 });
 
 exports.http = http;
@@ -10340,12 +10340,10 @@ var _default = {
     return _config.http.post('jogos', jogo);
   },
   atualizar: function atualizar(jogo) {
-    return _config.http.put('jogos', jogo);
+    return _config.http.put('jogos/' + jogo.id, jogo);
   },
   apagar: function apagar(jogo) {
-    return _config.http.delete('jogos', {
-      data: jogo.id
-    });
+    return _config.http.delete('jogos/' + jogo.id);
   }
 };
 exports.default = _default;
@@ -10985,7 +10983,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Valor")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Quantidade")])
+        _c("th", [_vm._v("Quantidade")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Ações")])
       ])
     ])
   }
@@ -11060,7 +11060,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64174" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65259" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

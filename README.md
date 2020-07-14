@@ -12,6 +12,6 @@ Abrir a pasta TrabalhoFinal no visualCode. Na pasta JsonServer utilizar a opçã
 npm install -g json-server e depois rodar json-server --watch db.json
 
 Na pasta Vue utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
-npm start e clicar com ctrl+click no diretório do localhost
+npm install, depois npm start e clicar com ctrl+click no diretório do localhost
 
 Qualquer problema procurar um dos integrantes do trabalho.

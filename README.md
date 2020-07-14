@@ -14,3 +14,4 @@ json-server --watch db.json
 
 Na pasta Vue utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
 npm start
+

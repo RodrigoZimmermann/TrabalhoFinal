@@ -8,7 +8,7 @@ Set-ExecutionPolicy Unrestricted
 Para retornar as política
 Set-ExecutionPolicy Restricted
 
-Abrir a pasta TrabalhoFinal no visual Studio. Na pasta JsonServer utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
+Abrir a pasta TrabalhoFinal no visualCode. Na pasta JsonServer utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
 npm install -g json-server
 json-server --watch db.json
 

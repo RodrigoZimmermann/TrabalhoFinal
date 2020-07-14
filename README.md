@@ -9,8 +9,7 @@ Para retornar as política
 Set-ExecutionPolicy Restricted
 
 Abrir a pasta TrabalhoFinal no visualCode. Na pasta JsonServer utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
-npm install -g json-server
-json-server --watch db.json
+npm install -g json-server e depois rodar json-server --watch db.json
 
 Na pasta Vue utilizar a opção direita do mouse "Open in Intregated Terminal" rodar
 npm start
